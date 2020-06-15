@@ -1,0 +1,18 @@
+.navigation {
+  display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.list-item {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  color: red;
+}

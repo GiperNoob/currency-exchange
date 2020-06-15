@@ -1,0 +1,34 @@
+footer {
+  background: black;
+  padding-top: 15px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-title {
+  margin-bottom: 10px;
+}
+
+.footer-title a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.flex-item-footer p {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.list-unstyled li {
+  margin-bottom: 5px;
+}
+
+.list-unstyled a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}

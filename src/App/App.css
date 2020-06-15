@@ -1,0 +1,10 @@
+.site {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgb(245, 245, 247);
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+}
