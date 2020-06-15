@@ -4,40 +4,67 @@ import './rate.css';
 export default class Rate extends Component {
   constructor() {
     super();
-    this.state = {
 
+    this.state = {
+      date: '',
+      currencyRate: {},
     };
+
+    this.currency = ['USD', 'RUB', 'CAD'];
+
+    this.getRate = () => {
+      fetch('https://api.exchangeratesapi.io/latest')
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({ date: data.date });
+
+          const result = {};
+
+          for (let i = 0; i < this.currency.length; i += 1) {
+            result[this.currency[i]] = data.rates[this.currency[i]];
+          }
+
+          this.setState({ currencyRate: result });
+        });
+    };
+
+    this.createCards = (data) => Object.keys(data).map((keyName) => (
+      <div className="flex-item" key={keyName}>
+
+        <div className="currency-name">{keyName}</div>
+
+        <div className="currency-in">
+          {data[keyName]}
+          *
+        </div>
+
+        <p className="currency-out">Можно купить за 1 EUR*</p>
+      </div>
+    ));
+
+    this.getRate();
   }
 
   render() {
+    const { date, currencyRate } = this.state;
+
     return (
       <div className="rate">
+
         <div className="container">
-          <h3>Курсы валют на 2020</h3>
+
+          <h3>
+            Курсы валют на
+            {' '}
+            {date}
+          </h3>
 
           <div className="flex-container">
-
-            <div className="flex-item">
-              <div className="currency-name">USD</div>
-              <div className="currency-in">1500</div>
-              <div className="currency-out">1200</div>
-            </div>
-
-            <div className="flex-item">
-              <div className="currency-name">USD</div>
-              <div className="currency-in">1500</div>
-              <div className="currency-out">1200</div>
-            </div>
-
-            <div className="flex-item">
-              <div className="currency-name">USD</div>
-              <div className="currency-in">1500</div>
-              <div className="currency-out">1200</div>
-            </div>
-
+            {this.createCards(currencyRate)}
           </div>
 
         </div>
+
       </div>
     );
   }
