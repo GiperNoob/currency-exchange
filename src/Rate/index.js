@@ -1,3 +1,3 @@
-import Rate from './rate';
+import Rate from './Rate';
 
 export default Rate;

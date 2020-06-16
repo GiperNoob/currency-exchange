@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './rate.css';
+import Calc from '../Calc';
 
 export default class Rate extends Component {
   constructor() {
@@ -64,6 +65,9 @@ export default class Rate extends Component {
           </div>
 
         </div>
+
+        <Calc currency={this.currency}
+              rate={this.state.currencyRate} />
 
       </div>
     );

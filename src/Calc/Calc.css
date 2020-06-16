@@ -1,0 +1,42 @@
+.block {
+  width: 980px;
+    height: 265px;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 247)
+}
+
+.calc-wish {
+  font-size: 18px;
+  color: grey;
+  padding: 15px 0 15px 15px;
+}
+
+.block div {
+  font-size: 18px;
+  color: grey;
+  padding: 5px;
+  margin: 9px 0 10px 4px;
+}
+
+input {
+  font-size: 18px;
+  color: grey;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-right: 3px;
+}
+
+select {
+  font-size: 18px;
+  color: grey;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.calc-res li {
+  margin-top: 20px;
+  color: red;
+  font-size: 20px;
+}
